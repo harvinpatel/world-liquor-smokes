@@ -200,3 +200,30 @@ body {
   padding: 2rem; cursor: zoom-out;
 }
 .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 12px; }
+
+/* ---------- Gallery categories ---------- */
+.cat-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
+.chip {
+  padding: 0.45rem 1rem; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: var(--white); text-decoration: none;
+  font-weight: 600; font-size: 0.9rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.chip:hover { border-color: var(--red); background: rgba(210,31,44,0.15); }
+.cat-block { margin-top: 3rem; scroll-margin-top: 84px; }
+.cat-title { font-size: 1.45rem; font-weight: 800; letter-spacing: 0.3px; }
+.cat-title::after {
+  content: ""; display: block; width: 40px; height: 3px;
+  background: var(--red); border-radius: 2px; margin-top: 0.45rem;
+}
+.cat-sub { color: var(--muted); margin-top: 0.6rem; }
+.cat-block .gallery-grid { margin-top: 1.25rem; }
+.video-figure { max-width: 400px; margin: 1.5rem auto 0.5rem; text-align: center; }
+.video-figure video {
+  width: 100%; display: block;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #000;
+}
+.video-figure figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 0.6rem; }

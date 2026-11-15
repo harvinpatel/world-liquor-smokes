@@ -18,13 +18,13 @@
   });
 })();
 
-// Simple lightbox for gallery images
+// Simple lightbox for gallery images (works across all category grids)
 (function () {
-  var grid = document.getElementById('gallery-grid');
-  grid.addEventListener('click', function (e) {
-    var fig = e.target.closest('figure');
+  document.addEventListener('click', function (e) {
+    var fig = e.target.closest('.gallery-grid figure');
     if (!fig) return;
     var img = fig.querySelector('img');
+    if (!img) return;
     var lb = document.createElement('div');
     lb.className = 'lightbox';
     var big = document.createElement('img');

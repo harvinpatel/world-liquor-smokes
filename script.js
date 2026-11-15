@@ -35,3 +35,28 @@
     document.body.appendChild(lb);
   });
 })();
+
+// Catalogue search filter
+(function () {
+  var input = document.getElementById('catalogue-search');
+  if (!input) return;
+  var cats = document.querySelectorAll('.catalogue-cat');
+  var none = document.getElementById('catalogue-noresults');
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    var anyVisible = false;
+    cats.forEach(function (cat) {
+      var title = cat.querySelector('h3');
+      var catMatch = q && title.textContent.toLowerCase().indexOf(q) > -1;
+      var visible = 0;
+      cat.querySelectorAll('.catalogue-list li').forEach(function (li) {
+        var show = !q || catMatch || li.textContent.toLowerCase().indexOf(q) > -1;
+        li.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      cat.style.display = visible ? '' : 'none';
+      if (visible) anyVisible = true;
+    });
+    none.hidden = anyVisible;
+  });
+})();
